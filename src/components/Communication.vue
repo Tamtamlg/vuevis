@@ -45,7 +45,7 @@ export default {
         {
           content: "Club activities",
           id: "pr2",
-          nestedGroups: ["DTM", "BTCC", "WorldRX", "WSR", "Roads", "WEC", "GP2"]
+          nestedGroups: ["DTM", "WorldRX", "WSR",  "GP2"]
         },
         { content: "W27 | Commercial Email | Sales", id: "Formula E", value: 1 },
         { content: "W28 | CRM | Commercial Email | Sales", id: "WRC", value: 2 },
@@ -60,12 +60,12 @@ export default {
         { content: "EWC", id: "EWC", value: 11 },
         { content: "BSB", id: "BSB", value: 12 },
         { content: "DTM", id: "DTM", value: 13 },
-        { content: "BTCC", id: "BTCC", value: 14 },
+        { content: "BTCC", id: "BTCC", value: 20 },
         { content: "WorldRX", id: "WorldRX", value: 15 },
         { content: "WSR", id: "WSR", value: 16 },
-        { content: "Roads", id: "Roads", value: 17 },
-        { content: "WEC", id: "WEC", value: 18 },
-        { content: "GP2", id: "GP2", value: 19 }
+        { content: "GP2", id: "GP2", value: 17, nestedGroups: ["WEC"] },
+        { content: "WEC", id: "WEC", value: 18, nestedGroups: ["Roads"] },
+        { content: "Roads", id: "Roads", value: 19, nestedGroups: ["BTCC",] },
       ],
       items: [
         {
@@ -140,9 +140,7 @@ export default {
         },
         groupTemplate: (group) => {
           return `<div class="group">
-                  <h5 class="group-title">${group.content}
-                    
-                  </h5>
+                  <h5 class="group-title">${group.content}</h5>
                   <div class="group-menu">
                     <span class="group-menu-btn">
                       <span class="group-menu-dot"></span>
